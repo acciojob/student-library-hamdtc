@@ -29,11 +29,15 @@ public class StudentService {
     }
 
     public void createStudent(Student student){
+
         studentRepository.save(student);
+        cardService.createAndReturn(student);
     }
 
     public void updateStudent(Student student){
+
         studentRepository.updateStudentDetails(student);
+
 
     }
 

@@ -24,9 +24,13 @@ public class Card {
     @JsonIgnoreProperties("card")
     private Student student;
 
+    @Column(name="createdOn",columnDefinition="TIMESTAMP")
+    @Temporal(TemporalType.TIMESTAMP)
     @CreationTimestamp
     private Date createdOn;
 
+    @Column(name="updatedOn",columnDefinition="TIMESTAMP")
+    @Temporal(TemporalType.TIMESTAMP)
     @UpdateTimestamp
     private Date updatedOn;
 
@@ -38,6 +42,7 @@ public class Card {
     private List<Book> books;
 
     public Card(){
+
         this.cardStatus = CardStatus.ACTIVATED;
     }
 }

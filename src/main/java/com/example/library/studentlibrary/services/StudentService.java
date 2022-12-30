@@ -16,7 +16,7 @@ public class StudentService {
     CardService cardService4;
 
     @Autowired
-    StudentRepository studentRepository4;
+    StudentRepository studentRepository;
 
     public Student getDetailsByEmail(String email){
         Student student = null;
@@ -31,7 +31,7 @@ public class StudentService {
     }
 
     public void createStudent(Student student){
-
+        studentRepository.save(student);
     }
 
     public void updateStudent(Student student){

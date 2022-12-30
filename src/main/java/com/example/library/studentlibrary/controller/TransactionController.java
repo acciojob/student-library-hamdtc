@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 //Add required annotations
-
+@RestController
 public class TransactionController {
 
     //Add required annotations

@@ -13,10 +13,10 @@ public class BookService {
 
 
     @Autowired
-    BookRepository bookRepository2;
+    BookRepository bookRepository;
 
     public void createBook(Book book){
-        bookRepository2.save(book);
+        bookRepository.save(book);
     }
 
     public List<Book> getBooks(String genre, boolean available, String author){

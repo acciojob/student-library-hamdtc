@@ -13,7 +13,7 @@ public class CardService {
 //higit
 
     @Autowired
-    CardRepository cardRepository3;
+    CardRepository cardRepository;
 
     public Card createAndReturn(Student student){
         Card card = null;
@@ -22,6 +22,6 @@ public class CardService {
     }
 
     public void deactivateCard(int student_id){
-        cardRepository3.deactivateCard(student_id, CardStatus.DEACTIVATED.toString());
+        cardRepository.deactivateCard(student_id, CardStatus.DEACTIVATED.toString());
     }
 }

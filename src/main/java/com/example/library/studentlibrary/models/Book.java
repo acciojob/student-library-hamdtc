@@ -12,7 +12,6 @@ import java.util.UUID;
 @Entity
 @Setter
 @Getter
-@NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class Book {

@@ -18,10 +18,11 @@ public class AuthorController {
     //Write createAuthor API with required annotations
     @Autowired
     AuthorService authorService;
-    @PostMapping("/create_author")
-    public ResponseEntity<String> addAuthor(@RequestBody Author author)
+
+    @PostMapping("/add_author")
+    public ResponseEntity<String> createAuthor(@RequestBody Author author)
     {
-        authorService.create(author);
+        authorService.createAuthor(author);
         return new ResponseEntity<>("author is successfully added" , HttpStatus.CREATED);
     }
 }

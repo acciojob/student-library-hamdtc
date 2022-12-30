@@ -10,9 +10,10 @@ public class AuthorService {
 
 
     @Autowired
-    AuthorRepository authorRepository1;
+    AuthorRepository authorRepository;
 
-    public void create(Author author){
 
+    public void createAuthor(Author author) {
+        authorRepository.save(author);
     }
 }

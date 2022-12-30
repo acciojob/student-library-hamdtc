@@ -13,20 +13,18 @@ public class StudentService {
 
 
     @Autowired
-    CardService cardService4;
+    CardService cardService;
 
     @Autowired
     StudentRepository studentRepository;
 
     public Student getDetailsByEmail(String email){
-        Student student = null;
-
+        Student student = studentRepository.findByEmailId(email);
         return student;
     }
 
     public Student getDetailsById(int id){
-        Student student = null;
-
+        Student student= studentRepository.findById(id).get();
         return student;
     }
 
@@ -35,10 +33,13 @@ public class StudentService {
     }
 
     public void updateStudent(Student student){
+        studentRepository.updateStudentDetails(student);
 
     }
 
     public void deleteStudent(int id){
+        studentRepository.deleteCustom(id);
+        cardService.deactivateCard(id);
         //Delete student and deactivate corresponding card
     }
 }

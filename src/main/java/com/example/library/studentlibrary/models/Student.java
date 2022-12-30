@@ -11,7 +11,6 @@ import java.util.Date;
 @Entity
 @Setter
 @Getter
-@NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class Student {

@@ -12,7 +12,6 @@ import java.util.List;
 @Entity
 @Setter
 @Getter
-@NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class Card {

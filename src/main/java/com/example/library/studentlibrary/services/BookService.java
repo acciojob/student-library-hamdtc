@@ -22,14 +22,22 @@ public class BookService {
     }
 
     public List<Book> getBooks(String genre, boolean available, String author){
-        List<Book> books = new ArrayList<>(); //find the elements of the list by yourself
+        List<Book> books = null; //find the elements of the list by yourself
 
-        if(author==null) {
-            books=bookRepository.findBooksByGenre(genre, available);
-        }else if(genre==null) {
-            books=bookRepository.findBooksByAuthor(author, available);
-        }else {
-            books=bookRepository.findBooksByGenreAuthor(genre, author, available);
+        if(genre != null && available==true){
+            books = bookRepository.findBooksByGenre(genre,available);
+        }
+        else if(author !=null){
+            books = bookRepository.findBooksByAuthor(author,available);
+        }
+        else if(genre !=null){
+            books = bookRepository.findBooksByGenre(genre,available);
+        }
+        else if(genre !=null && author != null){
+            books = bookRepository.findBooksByGenreAuthor(genre,author,available);
+        }
+        else{
+            books = bookRepository.findByAvailability(available);
         }
         return books;
     }

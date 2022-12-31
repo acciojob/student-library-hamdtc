@@ -23,10 +23,9 @@ public class CardService {
 
     public Card createAndReturn(Student student){
         Card card = new Card();
-        card.setCardStatus(CardStatus.ACTIVATED);
-
-
         card.setCreatedOn(new Date());
+        card.setUpdatedOn(new Date());
+        card.setCardStatus(CardStatus.ACTIVATED);
         card.setStudent(student);
         cardRepository.save(card);
         //link student with a new card

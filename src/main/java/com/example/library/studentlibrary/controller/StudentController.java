@@ -28,7 +28,7 @@ public class StudentController {
     }
 
     //Add required annotations
-    @PostMapping("/addStudent")//addStudent
+    @PostMapping("/")//addStudent
     public ResponseEntity createStudent(@RequestBody Student student){
         studentService.createStudent(student); //
 
